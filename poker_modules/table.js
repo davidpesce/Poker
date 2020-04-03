@@ -212,6 +212,7 @@ Table.prototype.initializeRound = function( changeDealer ) {
 		this.deck.shuffle();
 		this.headsUp = this.playersSittingInCount === 2;
 		this.playersInHandCount = 0;
+		this.public.biggestBet = 0;
 
 		for( var i=0 ; i<this.public.seatsCount ; i++ ) {
 			// If a player is sitting on the current seat
@@ -407,9 +408,10 @@ Table.prototype.showdown = function() {
 	}
 
 	var that = this;
+	var timeout = this.playersInHandCount * 2000;
 	setTimeout( function(){
 		that.endRound();
-	}, 2000 );
+	}, timeout );
 };
 
 /**
@@ -788,9 +790,12 @@ Table.prototype.endRound = function() {
 	if( this.playersSittingInCount < 2 ) {
 		this.stopGame();
 	} else {
-		this.initializeRound();
+		var that = this;
+		setTimeout( function(){ that.initializeRound(); },3000);
 	}
+
 };
+
 
 /**
  * Method that stops the game
