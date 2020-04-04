@@ -408,7 +408,9 @@ function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-tables[0] = new Table( 0, 'Table 1 (10 people)', eventEmitter(0), 10, 2, 1, 200, 40, false );
-tables[1] = new Table( 1, 'Table 2 (6 people)', eventEmitter(1), 6, 4, 2, 400, 80, false );
-tables[2] = new Table( 2, 'Table 3 (2 people)', eventEmitter(2), 2, 8, 4, 800, 160, false );
-tables[3] = new Table( 3, 'Sample 6-handed Private Table', eventEmitter(3), 6, 20, 10, 2000, 400, true );
+// id, name, eventEmitter, seatsCount, bigBlind, smallBlind, maxBuyIn, minBuyIn, privateTable
+tables[0] = new Table( 0, 'Table 1 (10 people)', eventEmitter(0), 10, 2, 1, 400, 40, false );
+tables[1] = new Table( 1, 'Table 2 (10 people)', eventEmitter(1), 10, 2, 1, 400, 40, false );
+tables[2] = new Table( 2, 'Table 3 (10 people)', eventEmitter(2), 10, 2, 1, 400, 40, false );
+tables[3] = new Table( 3, 'Table 4 (6 People)', eventEmitter(3), 6, 2, 1, 400, 40, false );
+tables[4] = new Table( 4, 'Table 5 (6 People)', eventEmitter(4), 6, 2, 1, 400, 40, false );
